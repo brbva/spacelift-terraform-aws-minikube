@@ -4,5 +4,6 @@ variable "env" {
 }
 
 variable "aws_region" {
-    type = "${var.aws_region}"
+    type = string
+    default = "${var.aws_region}"
 }
