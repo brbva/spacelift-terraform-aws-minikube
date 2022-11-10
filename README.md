@@ -1,2 +1,2 @@
-# minikube-aws-terraform
-Deploy a single node k8s cluster in AWS using Terraform and minikube.
+# spacelift-terraform-aws-minikube
+Deploy a single node k8s cluster in AWS using spacelift, Terraform and minikube.
