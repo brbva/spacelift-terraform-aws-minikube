@@ -4,5 +4,5 @@ variable "env" {
 }
 
 variable "aws_region" {
-    type = string
+    type = "${var.aws_region}"
 }
