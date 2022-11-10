@@ -42,7 +42,7 @@ resource "aws_instance" "kube_node" {
   user_data_replace_on_change = true
 
   tags = {
-    Name        = "K8s Single Node Cluster"
+    Name        = "K8s Single Node Cluster EC2"
     Environment = "${var.env}"
   }
 }
