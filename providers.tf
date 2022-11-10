@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "aws" {
-  region                   = "us-west-2"
-  shared_credentials_files = ["/mnt/c/Users/Bjay/.aws/credentials"]
+  #region                   = "us-west-2"
+  #shared_credentials_files = ["/mnt/c/Users/Bjay/.aws/credentials"]
   profile                  = "vscode"
 }
