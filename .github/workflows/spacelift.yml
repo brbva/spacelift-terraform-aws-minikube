@@ -29,7 +29,7 @@ jobs:
 
     - name: Deploy infrastructure
       env:
-        SPACELIFT_API_ENDPOINT: https://brbva.app.spacelift.io
+        SPACELIFT_API_KEY_ENDPOINT: https://brbva.app.spacelift.io
         SPACELIFT_API_KEY_ID: ${{ secrets.SPACELIFT_API_KEY_ID }}
         SPACELIFT_API_KEY_SECRET: ${{ secrets.SPACELIFT_API_KEY_SECRET }}
       run: spacectl stack deploy --id spacelift-terraform-aws-minikube
