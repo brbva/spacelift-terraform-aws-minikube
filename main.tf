@@ -29,7 +29,7 @@ resource "aws_security_group" "kube_sg_ssh" {
 
 resource "aws_key_pair" "kube_ec2_auth" {
   key_name   = "kube_key"
-  public_key = "mtckey.pub"
+  public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIABirO5OJ80miXLhONfR+y452wEm5dneIs0JTzjanbAf bjay@Elliot"
 }
 
 resource "aws_instance" "kube_node" {
