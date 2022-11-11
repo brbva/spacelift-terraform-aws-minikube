@@ -5,7 +5,7 @@ resource "aws_vpc" "kube_vpc" {
 
   tags = {
     Name = "dev"
-    env  = "${var.env}"
+    env  = var.env
   }
 }
 
@@ -52,10 +52,27 @@ resource "aws_route_table_association" "kube_public_assoc" {
   route_table_id = aws_route_table.kube_public_rt.id
 }
 
-output "kube_vpc_id" {
-  value = aws_vpc.kube_vpc.id
-}
+# Create security group
+resource "aws_security_group" "kube_sg_ssh" {
+  name        = "Allow SSH"
+  description = "Allow SSH inbound traffic"
+  vpc_id      = aws_vpc.kube_vpc.id
 
-output "kube_public_subnet" {
-  value = aws_subnet.kube_public_subnet.id
+  ingress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  tags = {
+    Name = "allow_ssh"
+  }
 }
