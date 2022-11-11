@@ -7,5 +7,5 @@ output "subnet_id" {
 }
 
 output "security_group_id" {
-    value = aws_security_group.kube_sg_ssh.id
+  value = aws_security_group.kube_sg_ssh.id
 }
